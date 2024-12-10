@@ -1,7 +1,7 @@
 
 # Shared Libs
 
-![Logo](https://img.icons8.com/color/512/fivem.png)
+![Logo](https://img.icons8.com/color/96/fivem.png)
 
 Based on vRPEX libs
 
