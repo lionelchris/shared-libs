@@ -38,7 +38,8 @@ local Tools = module("shared-libs","lib/Tools")
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
---local Tools = exports["shared-libs"]:myTools() QBCore = exports["qb-core"]:GetCoreObject()
+--local Tools = exports["shared-libs"]:myTools()
+QBCore = exports["qb-core"]:GetCoreObject()
 
 myServerVarAndFunctions = {}
 myServerVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
@@ -56,7 +57,8 @@ local Tools = module("shared-libs","lib/Tools")
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
---local Tools = exports["shared-libs"]:myTools() QBCore = exports["qb-core"]:GetCoreObject()
+--local Tools = exports["shared-libs"]:myTools()
+QBCore = exports["qb-core"]:GetCoreObject()
 
 myClientVarAndFunctions = {}
 myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
