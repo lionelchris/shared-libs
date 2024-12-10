@@ -18,10 +18,13 @@ Example of usage: add to fxmanifest
 ```lua
 shared_script "@shared-libs/lib/lib.lua"
 
-client_scripts { "@shared-libs/lib/utils.lua", --here
-'config/config-client.lua', 'client.lua' }
-server_scripts { "@shared-libs/lib/utils.lua", --here
-'@mysql-async/lib/MySQL.lua', 'config/config-server.lua', 'server.lua', }
+client_scripts { "@shared-libs/lib/utils.lua", -- add here
+'config/config-client.lua',
+'client.lua' }
+server_scripts { "@shared-libs/lib/utils.lua", -- add here
+'@mysql-async/lib/MySQL.lua',
+'config/config-server.lua',
+'server.lua' }
 ```
 
 
