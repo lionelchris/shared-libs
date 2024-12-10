@@ -18,7 +18,10 @@ Example of usage: add to fxmanifest
 ```lua
 shared_script "@shared-libs/lib/lib.lua"
 
-client_scripts { "@shared-libs/lib/utils.lua", --here 'config/config-client.lua', 'client.lua' } server_scripts { "@shared-libs/lib/utils.lua", --here '@mysql-async/lib/MySQL.lua', 'config/config-server.lua', 'server.lua', }
+client_scripts { "@shared-libs/lib/utils.lua", --here
+'config/config-client.lua', 'client.lua' }
+server_scripts { "@shared-libs/lib/utils.lua", --here
+'@mysql-async/lib/MySQL.lua', 'config/config-server.lua', 'server.lua', }
 ```
 
 
@@ -26,7 +29,9 @@ client_scripts { "@shared-libs/lib/utils.lua", --here 'config/config-client.lua'
 ## Example of usage: in your server scripts add
 
 ```lua
-local Tunnel = module("shared-libs","lib/Tunnel") local Proxy = module("shared-libs","lib/Proxy") local Tools = module("shared-libs","lib/Tools")
+local Tunnel = module("shared-libs","lib/Tunnel")
+local Proxy = module("shared-libs","lib/Proxy")
+local Tools = module("shared-libs","lib/Tools")
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
@@ -40,7 +45,9 @@ myServerVarAndFunctions = {} myServerVarAndFunctions = Tunnel.getInterface(GetCu
 ## Example of usage: in your Client scripts add
 
 ```lua
-local Tunnel = module("shared-libs","lib/Tunnel") local Proxy = module("shared-libs","lib/Proxy") local Tools = module("shared-libs","lib/Tools")
+local Tunnel = module("shared-libs","lib/Tunnel")
+local Proxy = module("shared-libs","lib/Proxy")
+local Tools = module("shared-libs","lib/Tools")
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
