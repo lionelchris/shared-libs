@@ -44,6 +44,19 @@ local QBCore = exports["qb-core"]:GetCoreObject()
 myServerVarAndFunctions = {}
 myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
 Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
+
+function myServerVarAndFunctions.checkJob(job)
+  local source = source
+  local x,y,z = myClientVarAndFunctions.getCamDirection(source)
+  print(x,y,z)
+  if job then
+    if QBCore.Functions.GetPlayer(source)?.PlayerData.job.name == job then
+      return true, QBCore.Functions.GetPlayer(source)?.PlayerData.job.name
+    else
+      return false, QBCore.Functions.GetPlayer(source)?.PlayerData.job.name
+    end
+  end
+end
 ```
 
 
@@ -63,6 +76,29 @@ local QBCore = exports["qb-core"]:GetCoreObject()
 myClientVarAndFunctions = {}
 Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)
 myServerVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName())
+
+function myClientVarAndFunctions.getCamDirection()
+  local heading = GetGameplayCamRelativeHeading()+GetEntityHeading(PlayerPedId())
+  local pitch = GetGameplayCamRelativePitch()
+  local x = -math.sin(heading*math.pi/180.0)
+  local y = math.cos(heading*math.pi/180.0)
+  local z = math.sin(pitch*math.pi/180.0)
+  local len = math.sqrt(x*x+y*y+z*z)
+    if len ~= 0 then
+      x = x/len
+      y = y/len
+      z = z/len
+    end
+  return x,y,z
+end
+
+RegisterCommand('teste',function(source,args,rawCommand)
+	
+	 
+local jobName = args[1]
+print("Current Job:" myServerVarAndFunctions.checkJob(jobName))
+
+end)
 ```
 
 
