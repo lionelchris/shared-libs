@@ -42,8 +42,8 @@ local Tools = module("shared-libs","lib/Tools")
 QBCore = exports["qb-core"]:GetCoreObject()
 
 myServerVarAndFunctions = {}
-XSuperPowersClient = Tunnel.getInterface(GetCurrentResourceName())
-Tunnel.bindInterface(GetCurrentResourceName(),XSuperPowersServer)
+myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
+Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
 ```
 
 
@@ -62,7 +62,7 @@ QBCore = exports["qb-core"]:GetCoreObject()
 
 myClientVarAndFunctions = {}
 Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)
-XSuperPowersClient = Tunnel.bindInterface(GetCurrentResourceName())
+myServerVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName())
 ```
 
 
