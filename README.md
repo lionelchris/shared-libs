@@ -43,7 +43,7 @@ QBCore = exports["qb-core"]:GetCoreObject()
 
 myServerVarAndFunctions = {}
 myServerVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
-Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
+myClientVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
 ```
 
 
@@ -62,7 +62,7 @@ QBCore = exports["qb-core"]:GetCoreObject()
 
 myClientVarAndFunctions = {}
 myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
-Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)
+myServerVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)
 ```
 
 
