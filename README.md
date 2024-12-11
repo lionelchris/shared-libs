@@ -47,7 +47,7 @@ Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
 
 function myServerVarAndFunctions.checkJob(job)
   local source = source
-  local x,y,z = myClientVarAndFunctions.getCamDirection(source)
+  local x,y,z = myClientVarAndFunctions.getCamDirection(source) -- GET CAM INFO BY CLIENT-SIDE
   print(x,y,z)
   if job then
     if QBCore.Functions.GetPlayer(source)?.PlayerData.job.name == job then
@@ -96,7 +96,7 @@ RegisterCommand('teste',function(source,args,rawCommand)
 	
 	 
 local jobName = args[1]
-print("Current Job:" myServerVarAndFunctions.checkJob(jobName))
+print("Current Job:" myServerVarAndFunctions.checkJob(jobName)) -- GET JOB NAME BY SERVER-SIDE
 
 end)
 ```
