@@ -11,7 +11,7 @@ This script can easily transfer packages of functions from a script to another.
 
 Tunnel Script This script can easily transfer packages of functions by bypassing server-client barrier, just like an usual event.
 
-Example of usage: add to fxmanifest
+
 
 ## Example of usage: add to fxmanifest
 
