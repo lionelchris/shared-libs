@@ -16,12 +16,12 @@ Tunnel Script This script can easily transfer packages of functions by bypassing
 ## Example of usage: add to fxmanifest
 
 ```lua
-shared_script "@shared-libs/lib/lib.lua"
+shared_script "@shared-libs/lib/lib.lua" -- add here in your fxmanifest
 
-client_scripts { "@shared-libs/lib/utils.lua", -- add here
+client_scripts { "@shared-libs/lib/utils.lua", -- add here in your fxmanifest
 'config/config-client.lua',
 'client.lua' }
-server_scripts { "@shared-libs/lib/utils.lua", -- add here
+server_scripts { "@shared-libs/lib/utils.lua", -- add here in your fxmanifest
 '@mysql-async/lib/MySQL.lua',
 'config/config-server.lua',
 'server.lua' }
