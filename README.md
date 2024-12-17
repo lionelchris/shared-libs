@@ -32,9 +32,9 @@ server_scripts { "@shared-libs/lib/utils.lua", -- add here in your fxmanifest
 ## Example of usage: in your server scripts add
 
 ```lua
-local Tunnel = module("shared-libs","lib/Tunnel")
-local Proxy = module("shared-libs","lib/Proxy")
-local Tools = module("shared-libs","lib/Tools")
+local Tunnel = module("shared-libs","lib/Tunnel") -- add here in your server
+local Proxy = module("shared-libs","lib/Proxy") -- add here in your server
+local Tools = module("shared-libs","lib/Tools") -- add here in your server
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
@@ -42,8 +42,8 @@ local Tools = module("shared-libs","lib/Tools")
 local QBCore = exports["qb-core"]:GetCoreObject()
 
 myServerVarAndFunctions = {}
-myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName())
-Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions)
+myClientVarAndFunctions = Tunnel.getInterface(GetCurrentResourceName()) -- get your shared variable in your clint
+Tunnel.bindInterface(GetCurrentResourceName(),myServerVarAndFunctions) -- put the shared variable this server file
 
 function myServerVarAndFunctions.checkJob(job)
   local source = source
@@ -64,9 +64,9 @@ end
 ## Example of usage: in your Client scripts add
 
 ```lua
-local Tunnel = module("shared-libs","lib/Tunnel")
-local Proxy = module("shared-libs","lib/Proxy")
-local Tools = module("shared-libs","lib/Tools")
+local Tunnel = module("shared-libs","lib/Tunnel") -- add here in your Client
+local Proxy = module("shared-libs","lib/Proxy") -- add here in your Client
+local Tools = module("shared-libs","lib/Tools") -- add here in your Client
 
 --local Tunnel = exports["shared-libs"]:myTunnel()
 
@@ -74,8 +74,8 @@ local Tools = module("shared-libs","lib/Tools")
 local QBCore = exports["qb-core"]:GetCoreObject()
 
 myClientVarAndFunctions = {}
-Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)
-myServerVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName())
+Tunnel.bindInterface(GetCurrentResourceName(),myClientVarAndFunctions)  -- put the shared variable this Client file
+myServerVarAndFunctions = Tunnel.bindInterface(GetCurrentResourceName()) -- get your shared variable in your server
 
 function myClientVarAndFunctions.getCamDirection()
   local heading = GetGameplayCamRelativeHeading()+GetEntityHeading(PlayerPedId())
